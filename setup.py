@@ -28,7 +28,10 @@ setup(
         'seaborn',
         'tensorboard',
         'torch>=1.5.1',
-        'tqdm'
+        'tqdm',
+        'glfw',
+        'imageio',
+        'mujoco'
     ],
     description="Teaching tools for introducing people to deep RL.",
     author="Joshua Achiam",

@@ -8,7 +8,6 @@ import json
 import os, subprocess, sys
 import os.path as osp
 import string
-import tensorflow as tf
 import torch
 from copy import deepcopy
 from textwrap import dedent
@@ -36,7 +35,7 @@ def add_with_backends(algo_list):
     # helper function to build lists with backend-specific function names
     algo_list_with_backends = deepcopy(algo_list)
     for algo in algo_list:
-        algo_list_with_backends += [algo + '_tf1', algo + '_pytorch']
+        algo_list_with_backends += [algo + '_pytorch']
     return algo_list_with_backends
 
 
