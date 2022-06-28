@@ -1,0 +1,15 @@
+cloudpickle
+gym[atari,box2d,classic_control]
+ipython
+joblib
+matplotlib
+mpi4py
+numpy
+pandas
+pytest
+psutil
+scipy
+seaborn
+tensorboard
+torch>=1.5.1
+tqdm
