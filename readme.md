@@ -1,9 +1,17 @@
 **Status:** Maintenance (expect bug fixes and minor updates)
 
-Welcome to Spinning Up in Deep RL! 
+spinningup-pytorch 
 ==================================
 
-- ![#f03c15](https://via.placeholder.com/15/f03c15/f03c15.png) This is a clone from spinningup with the goal for using the latest pytorch version. Tensorflow-based codes were removed from the original repository. 
+- ![#f03c15](https://via.placeholder.com/15/f03c15/f03c15.png) This is a clone from [Spinning Up](https://github.com/openai/spinningup) with the goal for using the latest pytorch version. Tensorflow-based codes were removed from the original repository. 
+
+### TDOD List
+
+- [ ] VPG
+- [ ] TRPO
+- [x] PPO
+- [ ] DDPG
+- [ ] TD3
 
 This is an educational resource produced by OpenAI that makes it easier to learn about deep reinforcement learning (deep RL).
 
