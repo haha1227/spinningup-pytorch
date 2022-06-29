@@ -1,1 +1,6 @@
 *.pyc
+spinup/algos/pytorch/ddpg/__pycache__/core.cpython-38.pyc
+spinup/algos/pytorch/ppo/__pycache__/core.cpython-38.pyc
+spinup/algos/pytorch/sac/__pycache__/core.cpython-38.pyc
+spinup/algos/pytorch/td3/__pycache__/core.cpython-38.pyc
+spinup/algos/pytorch/vpg/__pycache__/core.cpython-38.pyc
