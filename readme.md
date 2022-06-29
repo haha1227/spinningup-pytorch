@@ -1,11 +1,11 @@
 **Status:** Maintenance (expect bug fixes and minor updates)
 
-spinningup-pytorch 
+spinningup-pytorch
 ==================================
 
 - ![#f03c15](https://via.placeholder.com/15/f03c15/f03c15.png) This is a clone from [Spinning Up](https://github.com/openai/spinningup) with the goal for using the latest pytorch version. Tensorflow-based codes were removed from the original repository. 
 
-### TDOD List
+### TDOD List: add different activation functions for pi and v:
 
 - [ ] VPG
 - [ ] TRPO
