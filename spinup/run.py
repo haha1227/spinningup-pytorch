@@ -21,6 +21,8 @@ RUN_KEYS = ['num_cpu', 'data_dir', 'datestamp']
 SUBSTITUTIONS = {'env': 'env_name',
                  'hid': 'ac_kwargs:hidden_sizes',
                  'act': 'ac_kwargs:activation',
+                 'pi_act': 'ac_kwargs:pi_output_activation',
+                 'v_act': 'ac_kwargs:v_output_activation',
                  'cpu': 'num_cpu',
                  'dt': 'datestamp'}
 
