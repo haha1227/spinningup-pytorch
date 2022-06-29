@@ -3,7 +3,7 @@
 Welcome to Spinning Up in Deep RL! 
 ==================================
 
-- ![#f03c15](https://via.placeholder.com/15/f03c15/f03c15.png) This is a clone from spinningup with the goal for using the latest pytorch version. Tensorflow-based codes were removed from this repository. 
+- ![#f03c15](https://via.placeholder.com/15/f03c15/f03c15.png) This is a clone from spinningup with the goal for using the latest pytorch version. Tensorflow-based codes were removed from the original repository. 
 
 This is an educational resource produced by OpenAI that makes it easier to learn about deep reinforcement learning (deep RL).
 
