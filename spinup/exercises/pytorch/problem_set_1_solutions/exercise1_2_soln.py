@@ -4,7 +4,7 @@ import numpy as np
 
 EPS=1e-8
 
-def mlp(sizes, activation, output_activation=nn.Identity):
+def mlp(sizes, activation, output_activation):
     layers = []
     for j in range(len(sizes)-1):
         act = activation if j < len(sizes)-2 else output_activation
@@ -34,11 +34,11 @@ class DiagonalGaussianDistribution:
 
 class MLPGaussianActor(nn.Module):
 
-    def __init__(self, obs_dim, act_dim, hidden_sizes, activation):
+    def __init__(self, obs_dim, act_dim, hidden_sizes, activation, output_activation):
         super().__init__()
         log_std = -0.5 * np.ones(act_dim, dtype=np.float32)
         self.log_std = torch.nn.Parameter(torch.as_tensor(log_std))
-        self.mu_net = mlp([obs_dim] + list(hidden_sizes) + [act_dim], activation)
+        self.mu_net = mlp([obs_dim] + list(hidden_sizes) + [act_dim], activation, output_activation)
 
     def forward(self, obs, act=None):
         mu = self.mu_net(obs)

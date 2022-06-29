@@ -6,7 +6,7 @@ import numpy as np
 import gym
 from gym.spaces import Discrete, Box
 
-def mlp(sizes, activation=nn.Tanh, output_activation=nn.Identity):
+def mlp(sizes, activation=nn.Tanh, output_activation):
     # Build a feedforward neural network.
     layers = []
     for j in range(len(sizes)-1):

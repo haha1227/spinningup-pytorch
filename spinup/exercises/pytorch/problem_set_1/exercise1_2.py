@@ -16,7 +16,7 @@ so make sure to complete that exercise before beginning this one.
 
 """
 
-def mlp(sizes, activation, output_activation=nn.Identity):
+def mlp(sizes, activation, output_activation):
     """
     Build a multi-layer perceptron in PyTorch.
 
@@ -70,7 +70,7 @@ class DiagonalGaussianDistribution:
 
 class MLPGaussianActor(nn.Module):
 
-    def __init__(self, obs_dim, act_dim, hidden_sizes, activation):
+    def __init__(self, obs_dim, act_dim, hidden_sizes, activation, output_activation):
         super().__init__()
         """
         Initialize an MLP Gaussian Actor by making a PyTorch module for computing the
