@@ -28,9 +28,9 @@ LOG_STD_MIN = -20
 
 class SquashedGaussianMLPActor(nn.Module):
 
-    def __init__(self, obs_dim, act_dim, hidden_sizes, activation, act_limit):
+    def __init__(self, obs_dim, act_dim, hidden_sizes, activation, act_limit, output_activation):
         super().__init__()
-        self.net = mlp([obs_dim] + list(hidden_sizes), activation, activation)
+        self.net = mlp([obs_dim] + list(hidden_sizes), activation, output_activation)
         self.mu_layer = nn.Linear(hidden_sizes[-1], act_dim)
         self.log_std_layer = nn.Linear(hidden_sizes[-1], act_dim)
         self.act_limit = act_limit
@@ -71,7 +71,7 @@ class MLPQFunction(nn.Module):
 
     def __init__(self, obs_dim, act_dim, hidden_sizes, activation, output_activation):
         super().__init__()
-        self.q = mlp([obs_dim + act_dim] + list(hidden_sizes) + [1], activation)
+        self.q = mlp([obs_dim + act_dim] + list(hidden_sizes) + [1], activation, output_activation)
 
     def forward(self, obs, act):
         q = self.q(torch.cat([obs, act], dim=-1))
@@ -80,7 +80,7 @@ class MLPQFunction(nn.Module):
 class MLPActorCritic(nn.Module):
 
     def __init__(self, observation_space, action_space, hidden_sizes=(256,256),
-                 activation=nn.ReLU):
+                 activation=nn.ReLU, pi_output_activation=nn.Identity, v_output_activation=nn.Identity):
         super().__init__()
 
         obs_dim = observation_space.shape[0]
@@ -88,9 +88,9 @@ class MLPActorCritic(nn.Module):
         act_limit = action_space.high[0]
 
         # build policy and value functions
-        self.pi = SquashedGaussianMLPActor(obs_dim, act_dim, hidden_sizes, activation, act_limit)
-        self.q1 = MLPQFunction(obs_dim, act_dim, hidden_sizes, activation)
-        self.q2 = MLPQFunction(obs_dim, act_dim, hidden_sizes, activation)
+        self.pi = SquashedGaussianMLPActor(obs_dim, act_dim, hidden_sizes, activation, act_limit, pi_output_activation)
+        self.q1 = MLPQFunction(obs_dim, act_dim, hidden_sizes, activation, v_output_activation)
+        self.q2 = MLPQFunction(obs_dim, act_dim, hidden_sizes, activation, v_output_activation)
 
     def act(self, obs, deterministic=False):
         with torch.no_grad():

@@ -13,7 +13,7 @@ add different activation functions for pi and v:
 - [ ] TRPO
 - [x] PPO
 - [ ] DDPG
-- [ ] TD3
+- [x] TD3
 
 ### Installation
 
