@@ -327,7 +327,7 @@ def sac(env_fn, actor_critic=core.MLPActorCritic, ac_kwargs=dict(), seed=0,
 
             # Save model
             if (epoch % save_freq == 0) or (epoch == epochs):
-                logger.save_state({'env': env}, None)
+                logger.save_state({'env': env}, epoch)
 
             # Test the performance of the deterministic version of the agent.
             test_agent()
