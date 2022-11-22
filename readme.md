@@ -35,11 +35,11 @@ python -m spinup.run [algo name] [experiment flags]
 ```
 *E.g.*:
 ```
-python3 -m spinup.run ppo --env Walker2d-v4 --exp_name walker --hid [64,64] --pi_act torch.nn.Tanh
+python3 -m spinup.run ppo --env CartPole-v1 --exp_name walker --hid [64,64] --pi_act torch.nn.Tanh
 ```
 or run the same algorithm with many possible hyperparameters:
 ```
-python3 -m spinup.run ppo --env Walker2d-v4 --exp_name walker --hid [32] [64,64] --pi_act torch.nn.Tanh torch.nn.ReLU
+python3 -m spinup.run ppo --env CartPole-v1 --exp_name walker --hid [32] [64,64] --pi_act torch.nn.Tanh torch.nn.ReLU
 ```
 ##### Launching from Scripts:
 ```
