@@ -49,7 +49,7 @@ import torch
 
 seed = 0
 exp_name = 'walker'
-env_fn = lambda : gym.make('Walker2d-v4')
+env_fn = lambda : gym.make('CartPole-v1')
 ac_kwargs = dict(hidden_sizes=[64,64], pi_output_activation=torch.nn.Tanh)
 logger_kwargs = dict(output_dir=''.join([exp_name, '_s', str(seed)]), exp_name=exp_name)
 
@@ -69,7 +69,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     eg = ExperimentGrid(name='ppo-pyt-bench')
-    eg.add('env_name', 'CartPole-v0', '', True)
+    eg.add('env_name', 'CartPole-v1', '', True)
     eg.add('seed', [10*i for i in range(args.num_runs)])
     eg.add('epochs', 10)
     eg.add('steps_per_epoch', 4000)
